@@ -12,9 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
+Route::group(['prefix'=>'admin'], function() {
+    Route::get('/', 'admin@index');
+});
 
 Route::get('/efeng', function() {
     return 'Efeng';
